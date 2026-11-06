@@ -1,0 +1,126 @@
+[
+  {
+    "RECORD_TYPE": "SPAN",
+    "START_TIMESTAMP": "2026-09-24 00:00:00.123456789",
+    "TIMESTAMP": "2026-09-24 00:00:01.987654321",
+    "TRACE": {
+      "trace_id": "0123456789abcdef0123456789abcdef",
+      "span_id": "1111111111111111"
+    },
+    "RECORD": {
+      "name": "Agent",
+      "kind": "SPAN_KIND_INTERNAL",
+      "parent_span_id": "0000000000000000",
+      "status": {
+        "code": "STATUS_CODE_UNSET"
+      }
+    },
+    "RECORD_ATTRIBUTES": {
+      "snow.ai.observability.object.name": "TEST_AGENT",
+      "snow.ai.observability.agent.thread_id": "thread-1",
+      "ai.observability.record_root.input": "Weather in Sofia?",
+      "ai.observability.record_root.output": "Sunny."
+    },
+    "RESOURCE_ATTRIBUTES": {
+      "service.name": "cortex-fixture",
+      "snow.user.name": "example-user"
+    },
+    "VALUE": null
+  },
+  {
+    "RECORD_TYPE": "SPAN",
+    "START_TIMESTAMP": "2026-09-24 00:00:00.123456789",
+    "TIMESTAMP": "2026-09-24 00:00:01.987654321",
+    "TRACE": {
+      "trace_id": "0123456789abcdef0123456789abcdef",
+      "span_id": "2222222222222222"
+    },
+    "RECORD": {
+      "name": "Planning",
+      "kind": "SPAN_KIND_INTERNAL",
+      "parent_span_id": "1111111111111111",
+      "status": {
+        "code": "STATUS_CODE_UNSET"
+      }
+    },
+    "RECORD_ATTRIBUTES": {
+      "snow.ai.observability.agent.planning.model": "example-model",
+      "snow.ai.observability.agent.planning.token_count.input": 100,
+      "snow.ai.observability.agent.planning.token_count.output": "20",
+      "snow.ai.observability.agent.planning.token_count.cache_read_input": 40,
+      "snow.ai.observability.agent.planning.messages": "[{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Weather in Sofia?\"}]}]",
+      "snow.ai.observability.agent.planning.response": {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "call-1",
+            "name": "weather",
+            "input": {
+              "city": "Sofia"
+            }
+          }
+        ],
+        "finish_reason": "tool_call"
+      }
+    },
+    "RESOURCE_ATTRIBUTES": {
+      "service.name": "cortex-fixture",
+      "snow.user.name": "example-user"
+    },
+    "VALUE": null
+  },
+  {
+    "RECORD_TYPE": "SPAN",
+    "START_TIMESTAMP": "2026-09-24 00:00:00.123456789",
+    "TIMESTAMP": "2026-09-24 00:00:01.987654321",
+    "TRACE": {
+      "trace_id": "0123456789abcdef0123456789abcdef",
+      "span_id": "3333333333333333"
+    },
+    "RECORD": {
+      "name": "weather",
+      "kind": "SPAN_KIND_INTERNAL",
+      "parent_span_id": "2222222222222222",
+      "status": {
+        "code": "STATUS_CODE_UNSET"
+      }
+    },
+    "RECORD_ATTRIBUTES": {
+      "snow.ai.observability.agent.tool.id": "call-1",
+      "snow.ai.observability.agent.tool.code_execution.name": "weather",
+      "snow.ai.observability.agent.tool.code_execution.argument.value": "{\"city\":\"Sofia\"}"
+    },
+    "RESOURCE_ATTRIBUTES": {
+      "service.name": "cortex-fixture",
+      "snow.user.name": "example-user"
+    },
+    "VALUE": null
+  },
+  {
+    "RECORD_TYPE": "SPAN",
+    "START_TIMESTAMP": "2026-09-24 00:00:00.123456789",
+    "TIMESTAMP": "2026-09-24 00:00:01.987654321",
+    "TRACE": {
+      "trace_id": "0123456789abcdef0123456789abcdef",
+      "span_id": "4444444444444444"
+    },
+    "RECORD": {
+      "name": "Internal checkpoint",
+      "kind": "SPAN_KIND_INTERNAL",
+      "parent_span_id": "1111111111111111",
+      "status": {
+        "code": "STATUS_CODE_UNSET"
+      }
+    },
+    "RECORD_ATTRIBUTES": {},
+    "RESOURCE_ATTRIBUTES": {
+      "service.name": "cortex-fixture",
+      "snow.user.name": "example-user"
+    },
+    "VALUE": null
+  },
+  {
+    "RECORD_TYPE": "SPAN_EVENT"
+  }
+]

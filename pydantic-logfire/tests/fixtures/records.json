@@ -1,0 +1,519 @@
+[
+ {
+  "created_at": "2026-01-02T03:04:07.5Z",
+  "start_timestamp": "2026-01-02T03:04:05.000001Z",
+  "end_timestamp": "2026-01-02T03:04:07.5Z",
+  "duration": null,
+  "trace_id": "0af7651916cd43dd8448eb211c80319c",
+  "span_id": "1111111111111111",
+  "kind": "span",
+  "level": 9,
+  "parent_span_id": null,
+  "span_name": "invoke_agent concierge",
+  "message": "invoke_agent concierge",
+  "log_body": null,
+  "otel_status_code": "UNSET",
+  "otel_status_message": null,
+  "otel_links": [],
+  "otel_events": [],
+  "is_exception": false,
+  "tags": [
+   "demo"
+  ],
+  "exception_message": null,
+  "exception_type": null,
+  "exception_stacktrace": null,
+  "attributes_json_schema": {
+   "type": "object",
+   "properties": {
+    "pydantic_ai.all_messages": {
+     "type": "array"
+    }
+   }
+  },
+  "attributes": {
+   "gen_ai.agent.name": "concierge",
+   "gen_ai.conversation.id": "conv-1",
+   "gen_ai.operation.name": "invoke_agent",
+   "gen_ai.aggregated_usage.input_tokens": 120,
+   "pydantic_ai.all_messages": [
+    {
+     "role": "user",
+     "parts": [
+      {
+       "type": "text",
+       "content": "Is breakfast included?"
+      }
+     ]
+    }
+   ]
+  },
+  "otel_scope_name": "pydantic-ai",
+  "otel_scope_version": "1.0.0",
+  "otel_scope_attributes": {},
+  "service_namespace": "",
+  "service_name": "example-agent",
+  "service_version": null,
+  "service_instance_id": null,
+  "process_pid": 1,
+  "otel_resource_attributes": {
+   "service.name": "example-agent",
+   "telemetry.sdk.language": "python",
+   "telemetry.sdk.name": "opentelemetry"
+  },
+  "telemetry_sdk_name": "opentelemetry",
+  "telemetry_sdk_language": "python",
+  "telemetry_sdk_version": "1.0.0",
+  "deployment_environment": null,
+  "http_response_status_code": null,
+  "url_path": null,
+  "url_query": null,
+  "url_full": null,
+  "http_route": null,
+  "http_method": null,
+  "project_id": "example-project",
+  "day": "2026-01-02"
+ },
+ {
+  "created_at": "2026-01-02T03:04:06Z",
+  "start_timestamp": "2026-01-02T03:04:05.1Z",
+  "end_timestamp": "2026-01-02T03:04:06Z",
+  "duration": null,
+  "trace_id": "0af7651916cd43dd8448eb211c80319c",
+  "span_id": "2222222222222222",
+  "kind": "span",
+  "level": 9,
+  "parent_span_id": "1111111111111111",
+  "span_name": "chat example-model",
+  "message": "chat example-model",
+  "log_body": null,
+  "otel_status_code": "UNSET",
+  "otel_status_message": null,
+  "otel_links": [],
+  "otel_events": [],
+  "is_exception": false,
+  "tags": [],
+  "exception_message": null,
+  "exception_type": null,
+  "exception_stacktrace": null,
+  "attributes_json_schema": null,
+  "attributes": {
+   "gen_ai.agent.name": "concierge",
+   "gen_ai.conversation.id": "conv-1",
+   "gen_ai.operation.name": "chat",
+   "gen_ai.provider.name": "example",
+   "gen_ai.request.model": "example-model",
+   "gen_ai.usage.input_tokens": 60,
+   "gen_ai.usage.output_tokens": 8,
+   "gen_ai.input.messages": [
+    {
+     "role": "user",
+     "parts": [
+      {
+       "type": "text",
+       "content": "Is breakfast included?"
+      }
+     ]
+    }
+   ],
+   "gen_ai.output.messages": [
+    {
+     "role": "assistant",
+     "parts": [
+      {
+       "type": "tool_call",
+       "id": "call_1",
+       "name": "get_facts",
+       "arguments": {
+        "topic": "breakfast"
+       }
+      }
+     ],
+     "finish_reason": "stop"
+    }
+   ]
+  },
+  "otel_scope_name": "pydantic-ai",
+  "otel_scope_version": "1.0.0",
+  "otel_scope_attributes": {},
+  "service_namespace": "",
+  "service_name": "example-agent",
+  "service_version": null,
+  "service_instance_id": null,
+  "process_pid": 1,
+  "otel_resource_attributes": {
+   "service.name": "example-agent",
+   "telemetry.sdk.language": "python",
+   "telemetry.sdk.name": "opentelemetry"
+  },
+  "telemetry_sdk_name": "opentelemetry",
+  "telemetry_sdk_language": "python",
+  "telemetry_sdk_version": "1.0.0",
+  "deployment_environment": null,
+  "http_response_status_code": null,
+  "url_path": null,
+  "url_query": null,
+  "url_full": null,
+  "http_route": null,
+  "http_method": null,
+  "project_id": "example-project",
+  "day": "2026-01-02"
+ },
+ {
+  "created_at": "2026-01-02T03:04:06.2Z",
+  "start_timestamp": "2026-01-02T03:04:06.1Z",
+  "end_timestamp": "2026-01-02T03:04:06.2Z",
+  "duration": null,
+  "trace_id": "0af7651916cd43dd8448eb211c80319c",
+  "span_id": "3333333333333333",
+  "kind": "span",
+  "level": 9,
+  "parent_span_id": "1111111111111111",
+  "span_name": "execute_tool get_facts",
+  "message": "execute_tool get_facts",
+  "log_body": null,
+  "otel_status_code": "UNSET",
+  "otel_status_message": null,
+  "otel_links": [],
+  "otel_events": [],
+  "is_exception": false,
+  "tags": [],
+  "exception_message": null,
+  "exception_type": null,
+  "exception_stacktrace": null,
+  "attributes_json_schema": null,
+  "attributes": {
+   "gen_ai.agent.name": "concierge",
+   "gen_ai.conversation.id": "conv-1",
+   "gen_ai.operation.name": "execute_tool",
+   "gen_ai.tool.name": "get_facts",
+   "gen_ai.tool.call.id": "call_1",
+   "gen_ai.tool.call.arguments": {
+    "topic": "breakfast"
+   },
+   "gen_ai.tool.call.result": [
+    {
+     "topic": "breakfast",
+     "detail": "Included."
+    }
+   ]
+  },
+  "otel_scope_name": "pydantic-ai",
+  "otel_scope_version": "1.0.0",
+  "otel_scope_attributes": {},
+  "service_namespace": "",
+  "service_name": "example-agent",
+  "service_version": null,
+  "service_instance_id": null,
+  "process_pid": 1,
+  "otel_resource_attributes": {
+   "service.name": "example-agent",
+   "telemetry.sdk.language": "python",
+   "telemetry.sdk.name": "opentelemetry"
+  },
+  "telemetry_sdk_name": "opentelemetry",
+  "telemetry_sdk_language": "python",
+  "telemetry_sdk_version": "1.0.0",
+  "deployment_environment": null,
+  "http_response_status_code": null,
+  "url_path": null,
+  "url_query": null,
+  "url_full": null,
+  "http_route": null,
+  "http_method": null,
+  "project_id": "example-project",
+  "day": "2026-01-02"
+ },
+ {
+  "created_at": "2026-01-02T03:04:07Z",
+  "start_timestamp": "2026-01-02T03:04:06.3Z",
+  "end_timestamp": "2026-01-02T03:04:07Z",
+  "duration": null,
+  "trace_id": "0af7651916cd43dd8448eb211c80319c",
+  "span_id": "4444444444444444",
+  "kind": "span",
+  "level": 9,
+  "parent_span_id": "1111111111111111",
+  "span_name": "chat example-model",
+  "message": "chat example-model",
+  "log_body": null,
+  "otel_status_code": "UNSET",
+  "otel_status_message": null,
+  "otel_links": [],
+  "otel_events": [],
+  "is_exception": false,
+  "tags": [],
+  "exception_message": null,
+  "exception_type": null,
+  "exception_stacktrace": null,
+  "attributes_json_schema": null,
+  "attributes": {
+   "gen_ai.agent.name": "concierge",
+   "gen_ai.conversation.id": "conv-1",
+   "gen_ai.operation.name": "chat",
+   "gen_ai.request.model": "example-model",
+   "gen_ai.input.messages": [
+    {
+     "role": "user",
+     "parts": [
+      {
+       "type": "text",
+       "content": "Is breakfast included?"
+      }
+     ]
+    },
+    {
+     "role": "assistant",
+     "parts": [
+      {
+       "type": "tool_call",
+       "id": "call_1",
+       "name": "get_facts",
+       "arguments": {
+        "topic": "breakfast"
+       }
+      }
+     ]
+    },
+    {
+     "role": "user",
+     "parts": [
+      {
+       "type": "tool_call_response",
+       "id": "call_1",
+       "name": "get_facts",
+       "result": [
+        {
+         "detail": "Included."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "gen_ai.output.messages": [
+    {
+     "role": "assistant",
+     "parts": [
+      {
+       "type": "text",
+       "content": "Yes, breakfast is included."
+      }
+     ],
+     "finish_reason": "stop"
+    }
+   ]
+  },
+  "otel_scope_name": "pydantic-ai",
+  "otel_scope_version": "1.0.0",
+  "otel_scope_attributes": {},
+  "service_namespace": "",
+  "service_name": "example-agent",
+  "service_version": null,
+  "service_instance_id": null,
+  "process_pid": 1,
+  "otel_resource_attributes": {
+   "service.name": "example-agent",
+   "telemetry.sdk.language": "python",
+   "telemetry.sdk.name": "opentelemetry"
+  },
+  "telemetry_sdk_name": "opentelemetry",
+  "telemetry_sdk_language": "python",
+  "telemetry_sdk_version": "1.0.0",
+  "deployment_environment": null,
+  "http_response_status_code": null,
+  "url_path": null,
+  "url_query": null,
+  "url_full": null,
+  "http_route": null,
+  "http_method": null,
+  "project_id": "example-project",
+  "day": "2026-01-02"
+ },
+ {
+  "created_at": "2026-01-02T03:04:07.1Z",
+  "start_timestamp": "2026-01-02T03:04:07.1Z",
+  "end_timestamp": "2026-01-02T03:04:07.1Z",
+  "duration": null,
+  "trace_id": "0af7651916cd43dd8448eb211c80319c",
+  "span_id": "5555555555555555",
+  "kind": "log",
+  "level": 9,
+  "parent_span_id": "1111111111111111",
+  "span_name": "Answered {topic}",
+  "message": "Answered breakfast",
+  "log_body": null,
+  "otel_status_code": "UNSET",
+  "otel_status_message": null,
+  "otel_links": [],
+  "otel_events": [],
+  "is_exception": false,
+  "tags": [],
+  "exception_message": null,
+  "exception_type": null,
+  "exception_stacktrace": null,
+  "attributes_json_schema": null,
+  "attributes": {
+   "logfire.msg_template": "Answered {topic}",
+   "topic": "breakfast"
+  },
+  "otel_scope_name": "logfire",
+  "otel_scope_version": "1.0.0",
+  "otel_scope_attributes": {},
+  "service_namespace": "",
+  "service_name": "example-agent",
+  "service_version": null,
+  "service_instance_id": null,
+  "process_pid": 1,
+  "otel_resource_attributes": {
+   "service.name": "example-agent",
+   "telemetry.sdk.language": "python",
+   "telemetry.sdk.name": "opentelemetry"
+  },
+  "telemetry_sdk_name": "opentelemetry",
+  "telemetry_sdk_language": "python",
+  "telemetry_sdk_version": "1.0.0",
+  "deployment_environment": null,
+  "http_response_status_code": null,
+  "url_path": null,
+  "url_query": null,
+  "url_full": null,
+  "http_route": null,
+  "http_method": null,
+  "project_id": "example-project",
+  "day": "2026-01-02"
+ },
+ {
+  "created_at": "2026-01-02T03:04:07.4Z",
+  "start_timestamp": "2026-01-02T03:04:07.2Z",
+  "end_timestamp": "2026-01-02T03:04:07.4Z",
+  "duration": null,
+  "trace_id": "0af7651916cd43dd8448eb211c80319c",
+  "span_id": "6666666666666666",
+  "kind": "span",
+  "level": 17,
+  "parent_span_id": "1111111111111111",
+  "span_name": "chat example-model",
+  "message": "chat example-model",
+  "log_body": null,
+  "otel_status_code": "ERROR",
+  "otel_status_message": "Content filter triggered",
+  "otel_links": [
+   {
+    "context": {
+     "trace_id": "1af7651916cd43dd8448eb211c80319c",
+     "span_id": "7777777777777777"
+    },
+    "attributes": {
+     "reason": "retry"
+    }
+   }
+  ],
+  "otel_events": [
+   {
+    "event_name": "exception",
+    "event_timestamp": "2026-01-02T03:04:07.3Z",
+    "attributes": {
+     "exception.type": "ContentFilterError",
+     "exception.message": "Content filter triggered"
+    }
+   }
+  ],
+  "is_exception": false,
+  "tags": [],
+  "exception_message": null,
+  "exception_type": "ContentFilterError",
+  "exception_stacktrace": null,
+  "attributes_json_schema": null,
+  "attributes": {
+   "gen_ai.agent.name": "concierge",
+   "gen_ai.conversation.id": "conv-1",
+   "gen_ai.operation.name": "chat",
+   "gen_ai.input.messages": [
+    {
+     "role": "user",
+     "parts": [
+      {
+       "type": "text"
+      }
+     ]
+    }
+   ]
+  },
+  "otel_scope_name": "pydantic-ai",
+  "otel_scope_version": "1.0.0",
+  "otel_scope_attributes": {},
+  "service_namespace": "",
+  "service_name": "example-agent",
+  "service_version": null,
+  "service_instance_id": null,
+  "process_pid": 1,
+  "otel_resource_attributes": {
+   "service.name": "example-agent",
+   "telemetry.sdk.language": "python",
+   "telemetry.sdk.name": "opentelemetry"
+  },
+  "telemetry_sdk_name": "opentelemetry",
+  "telemetry_sdk_language": "python",
+  "telemetry_sdk_version": "1.0.0",
+  "deployment_environment": null,
+  "http_response_status_code": null,
+  "url_path": null,
+  "url_query": null,
+  "url_full": null,
+  "http_route": null,
+  "http_method": null,
+  "project_id": "example-project",
+  "day": "2026-01-02"
+ },
+ {
+  "created_at": "2026-01-02T03:04:07.45Z",
+  "start_timestamp": "2026-01-02T03:04:07.45Z",
+  "end_timestamp": "2026-01-02T03:04:07.45Z",
+  "duration": null,
+  "trace_id": "0af7651916cd43dd8448eb211c80319c",
+  "span_id": "8888888888888888",
+  "kind": "pending_span",
+  "level": 9,
+  "parent_span_id": "1111111111111111",
+  "span_name": "pending",
+  "message": "pending",
+  "log_body": null,
+  "otel_status_code": "UNSET",
+  "otel_status_message": null,
+  "otel_links": [],
+  "otel_events": [],
+  "is_exception": false,
+  "tags": [],
+  "exception_message": null,
+  "exception_type": null,
+  "exception_stacktrace": null,
+  "attributes_json_schema": null,
+  "attributes": {},
+  "otel_scope_name": "pydantic-ai",
+  "otel_scope_version": "1.0.0",
+  "otel_scope_attributes": {},
+  "service_namespace": "",
+  "service_name": "example-agent",
+  "service_version": null,
+  "service_instance_id": null,
+  "process_pid": 1,
+  "otel_resource_attributes": {
+   "service.name": "example-agent",
+   "telemetry.sdk.language": "python",
+   "telemetry.sdk.name": "opentelemetry"
+  },
+  "telemetry_sdk_name": "opentelemetry",
+  "telemetry_sdk_language": "python",
+  "telemetry_sdk_version": "1.0.0",
+  "deployment_environment": null,
+  "http_response_status_code": null,
+  "url_path": null,
+  "url_query": null,
+  "url_full": null,
+  "http_route": null,
+  "http_method": null,
+  "project_id": "example-project",
+  "day": "2026-01-02"
+ }
+]

@@ -1,0 +1,118 @@
+{
+  "trace_id": "tr-0123456789abcdef0123456789abcdef",
+  "client_request_id": null,
+  "request_time": "2026-09-24T00:00:00Z",
+  "state": "OK",
+  "execution_duration_ms": 1000.0,
+  "request": "Hello",
+  "response": "World",
+  "tags": {
+    "mlflow.traceName": "Demo"
+  },
+  "trace_metadata": {
+    "mlflow.trace.session": "session-1",
+    "mlflow.trace.tokenUsage": "{\"input_tokens\":100,\"output_tokens\":20}"
+  },
+  "assessments": [],
+  "spans": [
+    {
+      "trace_id": "tr-0123456789abcdef0123456789abcdef",
+      "span_id": "0000000000000001",
+      "parent_span_id": null,
+      "name": "Demo",
+      "start_time_unix_nano": 1790208000123456789,
+      "end_time_unix_nano": 1790208001123456789,
+      "status": {
+        "code": "STATUS_CODE_OK",
+        "message": ""
+      },
+      "attributes": {
+        "mlflow.spanType": "AGENT",
+        "mlflow.spanInputs": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Hello"
+            }
+          ]
+        },
+        "mlflow.spanOutputs": "World"
+      }
+    },
+    {
+      "trace_id": "tr-0123456789abcdef0123456789abcdef",
+      "span_id": "0000000000000002",
+      "parent_span_id": "0000000000000001",
+      "name": "model",
+      "start_time_unix_nano": 1790208000123456789,
+      "end_time_unix_nano": 1790208001123456789,
+      "status": {
+        "code": "STATUS_CODE_OK",
+        "message": ""
+      },
+      "attributes": {
+        "mlflow.spanType": "CHAT_MODEL",
+        "mlflow.llm.model": "example-model",
+        "mlflow.llm.provider": "example-provider",
+        "mlflow.chat.tokenUsage": {
+          "input_tokens": 100,
+          "output_tokens": 20
+        },
+        "mlflow.spanInputs": "{\"messages\":[{\"role\":\"user\",\"content\":\"Hello\"}]}",
+        "mlflow.spanOutputs": {
+          "choices": [
+            {
+              "message": {
+                "role": "assistant",
+                "content": null,
+                "tool_calls": [
+                  {
+                    "id": "call-1",
+                    "function": {
+                      "name": "lookup",
+                      "arguments": "{\"query\":\"example\"}"
+                    }
+                  }
+                ]
+              },
+              "finish_reason": "tool_calls"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "trace_id": "tr-0123456789abcdef0123456789abcdef",
+      "span_id": "0000000000000003",
+      "parent_span_id": "0000000000000002",
+      "name": "lookup",
+      "start_time_unix_nano": 1790208000123456789,
+      "end_time_unix_nano": 1790208001123456789,
+      "status": {
+        "code": "STATUS_CODE_OK",
+        "message": ""
+      },
+      "attributes": {
+        "mlflow.spanType": "TOOL",
+        "mlflow.spanInputs": "{\"query\":\"example\"}",
+        "mlflow.spanOutputs": "{\"found\":true}",
+        "tool_call_id": "call-1"
+      }
+    },
+    {
+      "trace_id": "tr-0123456789abcdef0123456789abcdef",
+      "span_id": "0000000000000004",
+      "parent_span_id": "0000000000000001",
+      "name": "parse",
+      "start_time_unix_nano": 1790208000123456789,
+      "end_time_unix_nano": 1790208001123456789,
+      "status": {
+        "code": "STATUS_CODE_OK",
+        "message": ""
+      },
+      "attributes": {
+        "mlflow.spanType": "PARSER"
+      }
+    }
+  ]
+}

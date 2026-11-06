@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+data/
+*.jsonl
+!examples/*.jsonl
+*.partial
+.env
+connections.toml
+.DS_Store
+.idea/
